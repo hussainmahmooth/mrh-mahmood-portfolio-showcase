@@ -37,9 +37,16 @@ const Contact = () => {
   };
 
   const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/my_CV.pdf';
+    link.download = 'Mahmooth_Hussain_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     toast({
-      title: "Resume Download",
-      description: "Resume download will be available soon.",
+      title: "CV Downloaded",
+      description: "Thank you for downloading my CV!",
     });
   };
 
