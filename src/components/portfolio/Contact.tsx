@@ -12,7 +12,8 @@ import {
   Download,
   Send,
   MapPin,
-  Clock
+  Clock,
+  MessageCircle
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -46,19 +47,19 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+94 70 123 4567",
-      href: "tel:+94701234567",
+      value: "0758325511",
+      href: "tel:0758325511",
     },
     {
       icon: Mail,
       label: "Email",
-      value: "mahmood@example.com",
-      href: "mailto:mahmood@example.com",
+      value: "mahmoothhussain550@gmail.com",
+      href: "mailto:mahmoothhussain550@gmail.com",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "Colombo, Sri Lanka",
+      value: "Remote location",
       href: null,
     },
     {
@@ -73,20 +74,26 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/mahmood",
+      href: "https://www.linkedin.com/in/mahmooth-hussain-29065a2a8/",
       color: "hover:text-blue-400",
     },
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/mahmood",
+      href: "https://github.com/#:~:text=Mahmooth%20Hussain,slow%20to%20respond.",
       color: "hover:text-gray-400",
     },
     {
       icon: Facebook,
       label: "Facebook", 
-      href: "https://facebook.com/mahmood",
+      href: "https://web.facebook.com/hussain.mahmood.37266/",
       color: "hover:text-blue-600",
+    },
+    {
+      icon: MessageCircle,
+      label: "WhatsApp",
+      href: "https://wa.me/qr/GH6FQF7HRPMSF1",
+      color: "hover:text-green-400",
     },
   ];
 
