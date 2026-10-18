@@ -20,3 +20,21 @@
   font-size: 11px;
   color: #adcff8;
 }
+
+.folio-repository-reference {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 14px;
+  background: #11243a;
+  border: 1px solid #2d4b6e;
+  border-radius: 7px;
+  color: #a9ceff;
+}
+.folio-repository-reference:hover { background: #17314f; border-color: #547fb2; }
+.folio-repository-icon { flex-shrink: 0; }
+.folio-repository-copy { flex: 1; min-width: 0; }
+.folio-repository-copy > span { display: block; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: #6f99c8; }
+.folio-repository-copy > strong { display: block; font: 400 10px/1.8 'JetBrains Mono', monospace; overflow-wrap: anywhere; margin-top: 3px; }
+.folio-repository-reference > svg { flex-shrink: 0; }

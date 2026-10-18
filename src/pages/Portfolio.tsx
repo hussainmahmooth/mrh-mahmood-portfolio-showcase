@@ -10,12 +10,40 @@ const collectionIcons = { projects: Braces, skills: Code2, experience: Briefcase
 const labels: Record<string, string> = { projects: "SELECTED WORK", skills: "TECHNICAL TOOLKIT", experience: "EXPERIENCE", education: "EDUCATION", qualifications: "QUALIFICATIONS", certifications: "CREDENTIALS", thoughts: "THOUGHTS & NOTES", achievements: "MILESTONES", goals: "WHAT’S NEXT", aspirations: "LOOKING AHEAD" };
 const shortLabels: Record<string, string> = { projects: "Work", skills: "Skills", certifications: "Credentials" };
 
+function ProjectRepositoryReference({ url, title }: { url: string; title: string }) {
+  if (!url.trim()) return null;
+  let repositoryName = url;
+  try {
+    const parsed = new URL(url);
+    repositoryName = `${parsed.hostname === "github.com" ? "" : parsed.hostname + "/"}${parsed.pathname.replace(/^\/+|\/+$/g, "").replace(/\.git$/, "")}`;
+  } catch { /* Draft previews retain the entered label. Published URLs are validated. */ }
+  return <a className="folio-repository-reference" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${title} — GitHub repository`}>
+    <span className="folio-repository-icon"><Github size={19}/></span>
+    <span className="folio-repository-copy"><span>GitHub reference</span><strong>{repositoryName}</strong></span>
+    <ArrowUpRight size={16}/>
+  </a>;
+}
+
 function ItemCard({ item, group, index }: { item: Entry; group: GroupId; index: number }) {
   const Icon = collectionIcons[group as keyof typeof collectionIcons] || Code2;
   const isProject = group === "projects";
   return <article className={`folio-card ${isProject ? "folio-project" : ""}`}>
     {item.image ? <div className="folio-cover"><img src={item.image} alt={item.title} loading="lazy" /></div> : isProject && <div className={`folio-project-art project-art-${index % 4}`} aria-hidden="true"><div className="project-art-grid" /><div className="project-art-window"><div className="project-art-bar"><i /><i /><i /><span>{item.category || "PROJECT"} / SYSTEM</span></div><div className="project-art-body"><div className="project-node"><Braces size={24} /><span>application</span></div><div className="project-connector" /><div className="project-node"><Network size={24} /><span>services</span></div><div className="project-connector" /><div className="project-node"><Terminal size={24} /><span>data</span></div></div><div className="project-art-status"><span /><span>{item.tags.slice(0, 3).join(" / ")}</span></div></div><span className="project-art-index">0{index + 1}</span></div>}
-    <div className="folio-card-content"><div className="folio-card-top"><div className="folio-icon"><Icon size={18} /></div>{item.category && <span className="folio-tag">{item.category}</span>}{isProject && <span className="folio-index">0{index + 1}</span>}</div><h3>{item.title}</h3>{(item.subtitle || item.date) && <p className="folio-meta">{[item.subtitle, item.date].filter(Boolean).join(" · ")}</p>}{item.description && <p className="folio-description">{item.description}</p>}{item.detail && <p className="folio-detail">{item.detail}</p>}{!!item.tags.length && <div className="folio-tags">{item.tags.filter(Boolean).map((tag, i) => <span key={i}>{tag}</span>)}</div>}{group === "skills" && item.level > 0 && <div className="folio-progress" aria-label={`${item.level}% proficiency`}><span style={{width:`${item.level}%`}} /></div>}{(item.url || item.github || item.pdf) && <div className="folio-card-links">{item.url && <a href={item.url} target="_blank" rel="noopener noreferrer">{isProject ? "View project" : "View credential / link"}<ArrowUpRight size={15} /></a>}{item.github && <a href={item.github} target="_blank" rel="noopener noreferrer"><Github size={15} />Source code</a>}{item.pdf && <a href={item.pdf} target="_blank" rel="noopener noreferrer"><FileText size={15} />View PDF</a>}</div>}</div>
+    <div className="folio-card-content">
+      <div className="folio-card-top"><div className="folio-icon"><Icon size={18}/></div>{item.category && <span className="folio-tag">{item.category}</span>}{isProject && <span className="folio-index">0{index + 1}</span>}</div>
+      <h3>{item.title}</h3>
+      {(item.subtitle || item.date) && <p className="folio-meta">{[item.subtitle,item.date].filter(Boolean).join(" · ")}</p>}
+      {item.description && <p className="folio-description">{item.description}</p>}
+      {item.detail && <p className="folio-detail">{item.detail}</p>}
+      {!!item.tags.length && <div className="folio-tags">{item.tags.filter(Boolean).map((tag,i)=><span key={i}>{tag}</span>)}</div>}
+      {group === "skills" && item.level > 0 && <div className="folio-progress" aria-label={`${item.level}% proficiency`}><span style={{width:`${item.level}%`}}/></div>}
+      {isProject && <ProjectRepositoryReference url={item.github} title={item.title}/>}
+      {(item.url || (!isProject && item.github) || item.pdf) && <div className="folio-card-links">
+        {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer">{isProject ? "View project" : "View credential / link"}<ArrowUpRight size={15}/></a>}
+        {!isProject && item.github && <a href={item.github} target="_blank" rel="noopener noreferrer"><Github size={15}/>Source code</a>}
+        {item.pdf && <a href={item.pdf} target="_blank" rel="noopener noreferrer"><FileText size={15}/>View PDF</a>}
+      </div>}
+    </div>
   </article>;
 }
 

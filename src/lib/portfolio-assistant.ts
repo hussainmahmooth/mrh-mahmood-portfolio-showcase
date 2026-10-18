@@ -13,7 +13,7 @@ function entryReply(item: Entry, group: GroupId): AssistantReply {
   const details = [item.title, [item.subtitle, item.date].filter(Boolean).join(" · "), shorten(item.description), item.tags.filter(Boolean).length ? `Technologies / highlights: ${item.tags.filter(Boolean).join(", ")}.` : "", shorten(item.detail, 220)].filter(Boolean);
   const links: AssistantLink[] = [];
   if (item.url) links.push({label: group === "projects" ? "View project" : "View link", href: item.url});
-  if (item.github) links.push({label:"Source code",href:item.github});
+  if (item.github) links.push({label:"GitHub repository",href:item.github});
   if (item.pdf) links.push({label:"View PDF",href:item.pdf});
   links.push({label:"See on portfolio",href:`#${group === "interests" ? "about" : group}`});
   return reply(details.join("\n\n"), links);

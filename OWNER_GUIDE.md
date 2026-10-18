@@ -18,7 +18,7 @@ If you lose your password, use the authenticated Netlify dashboard's Blobs brows
 
 - **Profile & about:** name, job title, photo, introductions, traits, contact details, availability.
 - **Resume:** upload or replace your latest resume PDF and change the button text.
-- **Projects:** descriptions, technologies, cover images, live links, source repositories, supporting PDFs.
+- **Projects:** descriptions, technologies, cover images, live links, source repositories, supporting PDFs. Every project has an always-visible **GitHub repository URL (optional)** field. Leave it blank to hide the reference; add or change it and click **Publish** to display a clickable GitHub reference on the public card. Clearing it and publishing removes the reference.
 - **Experience, education, qualifications, certifications:** organizations, dates, achievements, images, credential links, and PDF evidence.
 - **Thoughts & notes:** publish thoughts, articles, and updates.
 - **Skills, achievements, goals, aspirations, interests, profile stats, social links:** add, edit, delete, and reorder entries.
