@@ -4,18 +4,15 @@ Click **Owner** at the bottom of the public portfolio, or visit `/owner`.
 
 ## First login
 
-The first owner account is protected by a private setup key. In Netlify → Project configuration → Environment variables, set:
-
-- `OWNER_SETUP_TOKEN`: a randomly generated secret of at least 32 characters.
-- `OWNER_SESSION_SECRET`: a separate randomly generated secret of at least 32 characters.
-
-Use **Functions** scope and the **production** deploy context. Redeploy after changing environment variables. Never prefix secrets with `VITE_` or commit them to Git.
+The first owner account is protected by a private, randomly generated 256-bit setup key provided separately. The production server contains only its SHA-256 verification digest, which cannot be used as the key. The private setup key is never included in the website or source repository. No Netlify environment setup is required for this production deployment.
 
 Open `/owner`, enter the private setup key, and choose your username and a password of at least 12 characters. Alternatively use `/owner#setup=YOUR_PRIVATE_SETUP_KEY`; the page removes the key from the address bar immediately. This setup key works only until the first owner has been created. There is no public registration or default password.
 
 After setup, log in with your chosen username and password. Update them under **Login & security**, using your current password. Password updates invalidate existing sessions. Sessions expire after 8 hours. Sign out when finished.
 
-If you lose your password, use the authenticated Netlify dashboard's Blobs browser to remove only `credentials` in `portfolio-owner-production`, change both environment secrets, and redeploy. Then create your owner login again with the new private setup key. Keep access to your Netlify account secure.
+Session signing keys are generated on the server and kept inside the private owner credentials record in Netlify Blobs. They rotate when the password changes. No signing secret is sent to the browser or included in the source code.
+
+If you lose your password, use the authenticated Netlify dashboard's Blobs browser to remove only `credentials` in `portfolio-owner-production`, then use your private setup link to create your owner login again. To replace a lost setup key, set a new random `OWNER_SETUP_TOKEN` with **Functions** scope for **production**, redeploy, and use that new key. Keep access to your Netlify account secure. Never prefix secrets with `VITE_` or commit them to Git.
 
 ## Customize your portfolio
 
@@ -45,11 +42,11 @@ npm run build
 npx netlify dev
 ```
 
-For local owner setup, use a git-ignored `.env` containing separate development values for `OWNER_SETUP_TOKEN` and `OWNER_SESSION_SECRET`. `npm run dev` alone previews the public UI but does not start server functions.
+For local owner setup, use a git-ignored `.env` containing a separate development value for `OWNER_SETUP_TOKEN`. `npm run dev` alone previews the public UI but does not start server functions. The production verification digest is not accepted in local or preview contexts.
 
 Netlify uses `netlify.toml`: build `npm run build`, publish `dist`, functions `netlify/functions`, and SPA routing for `/owner`. Publish through the Git repository connected to your existing Netlify project. This requires **functions**, so a static `dist` upload alone does not include the dashboard backend.
 
-Data and files persist across production redeploys in Netlify Blobs. Production, preview, and local store names are isolated. Preview accounts and content are not production accounts or content. Runtime secrets must be configured for any context in which you want owner setup to work.
+Data and files persist across production redeploys in Netlify Blobs. Production, preview, and local store names are isolated. Preview accounts and content are not production accounts or content. For local or preview owner setup, configure a separate `OWNER_SETUP_TOKEN` in that context.
 
 ## Checks
 

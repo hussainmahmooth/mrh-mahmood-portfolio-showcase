@@ -9,7 +9,7 @@ import auth from '../netlify/functions/owner-auth.mts';
 import content from '../netlify/functions/portfolio-content.mts';
 import upload from '../netlify/functions/portfolio-upload.mts';
 import files from '../netlify/functions/portfolio-files.mts';
-import { sessionToken, credentials, storeName } from '../netlify/lib/auth.mts';
+import { storeName, setupConfigured, validSetupKey } from '../netlify/lib/auth.mts';
 
 const directory = await mkdtemp(join(tmpdir(), 'portfolio-owner-test-'));
 const server = new BlobsServer({ directory, token: 'local-test-token', logger() {} });
@@ -17,7 +17,7 @@ const address = await server.start();
 setEnvironmentContext({ siteID: 'local-test-site', token: 'local-test-token', edgeURL: `http://localhost:${address.port}`, uncachedEdgeURL: `http://localhost:${address.port}` });
 process.env.CONTEXT = 'dev';
 process.env.OWNER_SETUP_TOKEN = randomBytes(32).toString('hex');
-process.env.OWNER_SESSION_SECRET = randomBytes(48).toString('hex');
+delete process.env.OWNER_SESSION_SECRET;
 const base = 'https://portfolio.example';
 const password = 'test-only-strong-passphrase';
 let cookie = '';
@@ -70,6 +70,13 @@ try {
   assert.match((await login({ action: 'logout' })).headers.get('set-cookie'), /Max-Age=0/);
   assert.equal(storeName('content'), 'portfolio-content-local');
   process.env.CONTEXT = 'deploy-preview'; assert.equal(storeName('content'), 'portfolio-content-preview');
+  delete process.env.OWNER_SETUP_TOKEN;
+  assert.equal(setupConfigured(), false);
+  assert.equal(validSetupKey('incorrect-production-key'), false);
+  process.env.CONTEXT = 'production';
+  assert.equal(storeName('content'), 'portfolio-content-production');
+  assert.equal(setupConfigured(), true);
+  assert.equal(validSetupKey('incorrect-production-key'), false);
   console.log('PASS: owner authentication, setup replay protection, protected publishing, origin checks, validation, uploads, public file serving, password rotation, tampered sessions, and context isolation.');
 } finally {
   await server.stop();

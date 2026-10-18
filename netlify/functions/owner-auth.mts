@@ -1,11 +1,11 @@
 import type { Config } from "@netlify/functions";
-import { authenticated, checkPassword, cookie, credentials, env, equal, getOwner, json, ownerStore, sameOrigin, sessionToken } from "../lib/auth.mts";
+import { authenticated, checkPassword, cookie, credentials, equal, getOwner, json, ownerStore, sameOrigin, sessionToken, setupConfigured, validSetupKey } from "../lib/auth.mts";
 
 export default async (req: Request) => {
   try {
     if (req.method === "GET") {
       const owner = await authenticated(req);
-      return json({ authenticated: !!owner, username: owner?.username, setupRequired: !(await getOwner()), configured: !!env("OWNER_SETUP_TOKEN") && (env("OWNER_SESSION_SECRET")?.length ?? 0) >= 32 });
+      return json({ authenticated: !!owner, username: owner?.username, setupRequired: !(await getOwner()), configured: setupConfigured() });
     }
     if (req.method !== "POST") return json({ error: "Method not allowed." }, 405);
     if (!sameOrigin(req)) return json({ error: "Request origin rejected." }, 403);
@@ -25,10 +25,9 @@ export default async (req: Request) => {
     if (input.action === "setup" || input.action === "password") {
       if (!/^[a-zA-Z0-9@._+-]{3,100}$/.test(username) || password.length < 12) return json({ error: "Use a username of at least 3 characters and a password of at least 12 characters." }, 400);
       if (input.action === "setup") {
-        const token = env("OWNER_SETUP_TOKEN");
-        if (!token || typeof input.token !== "string" || !equal(token, input.token)) return json({ error: "Invalid owner setup key." }, 403);
+        if (!validSetupKey(input.token)) return json({ error: "Invalid owner setup key." }, 403);
         if (owner) return json({ error: "An owner already exists. Please sign in." }, 409);
-        // Check session configuration before creating the one-time account.
+        // The signing key is generated here and stays in private owner storage.
         const next = credentials(username, password); const session = sessionToken(next);
         const result = await ownerStore().setJSON("credentials", next, { onlyIfNew: true });
         if (!result.modified) return json({ error: "An owner already exists. Please sign in." }, 409);
