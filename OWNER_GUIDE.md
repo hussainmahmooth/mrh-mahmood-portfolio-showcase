@@ -48,12 +48,19 @@ Netlify uses `netlify.toml`: build `npm run build`, publish `dist`, functions `n
 
 Data and files persist across production redeploys in Netlify Blobs. Production, preview, and local store names are isolated. Preview accounts and content are not production accounts or content. For local or preview owner setup, configure a separate `OWNER_SETUP_TOKEN` in that context.
 
+## Portfolio assistant
+
+The public portfolio includes a built-in assistant for projects, skills, education, certifications, experience, thoughts, resume links, and contact information. It answers from the same portfolio content displayed to visitors; publishing updates in Owner Studio updates its information too. Hidden collections are excluded. It is a portfolio guide, not a general-purpose AI or a live contact agent. It does not send visitor questions to an external chatbot service. The unavailable third-party widget has been removed.
+
+The browser tab icon uses the HM monogram in SVG and ICO formats.
+
 ## Checks
 
 ```sh
 npm run build
 npm run typecheck
 npm test
+npm run test:assistant
 ```
 
 The backend integration test uses the Netlify local Blobs server in a temporary test directory. It never touches production content or credentials. Authentication tests cover first setup, wrong credentials, protected writes and uploads, cross-origin rejection, publishing, file delivery, password changes, invalidated sessions, and setup replay.

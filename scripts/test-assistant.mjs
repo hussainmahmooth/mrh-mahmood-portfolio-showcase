@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { answerPortfolioQuestion } from '../src/lib/portfolio-assistant.ts';
+
+const portfolio = JSON.parse(await readFile(new URL('../src/data/portfolio.json',import.meta.url),'utf8'));
+const ask = question => answerPortfolioQuestion(question,portfolio);
+assert.match(ask('Show me the projects').text,/Medical Management Hub/);
+assert.match(ask('Show me the projects').text,/LMS Website/);
+assert.match(ask('What technologies are used in Medical Management Hub?').text,/MongoDB/);
+assert.match(ask('What are your skills?').text,/Python/);
+assert.match(ask('Tell me about Python').text,/Django/);
+assert.ok(ask('Download resume').links.some(link=>link.href===portfolio.profile.resume));
+assert.ok(ask('How can I contact you?').links.some(link=>link.href===`mailto:${portfolio.profile.email}`));
+assert.match(ask('Where did you study?').text,/ICST/);
+assert.match(ask('Show certifications').text,/Artificial Intelligence/);
+assert.match(ask('Who is Mahmood?').text,/ICST/);
+assert.match(ask('What is your work experience?').text,/no published work experience entries/);
+assert.match(ask('What is the price of bitcoin today?').text,/don’t have information/);
+
+const updated=structuredClone(portfolio);
+updated.profile.resume='/api/files/latest-resume.pdf';
+assert.equal(answerPortfolioQuestion('CV',updated).links[0].href,updated.profile.resume);
+updated.sections.projects.items[0].title='Updated public project';
+assert.match(answerPortfolioQuestion('List projects',updated).text,/Updated public project/);
+updated.sections.projects.visible=false;
+assert.doesNotMatch(answerPortfolioQuestion('Show projects',updated).text,/Updated public project/);
+assert.doesNotMatch(answerPortfolioQuestion('Tell me about Updated public project',updated).text,/Updated public project/);
+updated.sections.certifications.visible=false;
+assert.doesNotMatch(answerPortfolioQuestion('Artificial Intelligence (Level 1)',updated).text,/Foundational certification/);
+updated.profile.resume='';
+assert.match(answerPortfolioQuestion('Resume',updated).text,/has not been published/);
+const page=await readFile(new URL('../index.html',import.meta.url),'utf8');
+assert.doesNotMatch(page,/openwidget|__ow/);
+assert.match(page,/favicon\.svg\?v=hm-1/);
+console.log('PASS: portfolio-grounded answers, project details, resume/contact links, published-content updates, hidden sections, missing content, unknown topics, removed unavailable widget, and HM favicon wiring.');

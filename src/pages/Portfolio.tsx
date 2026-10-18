@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Award, Braces, BriefcaseBusiness, 
 import { defaultPortfolio, fetchPortfolio } from "@/lib/portfolio-api";
 import { portfolioSchema, type Entry, type GroupId, type Portfolio } from "@/lib/portfolio-schema";
 import "./portfolio.css";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 
 const collectionOrder: GroupId[] = ["projects", "skills", "experience", "education", "qualifications", "certifications", "thoughts", "achievements", "goals", "aspirations"];
 const collectionIcons = { projects: Braces, skills: Code2, experience: BriefcaseBusiness, education: GraduationCap, qualifications: Award, certifications: Award, thoughts: FileText, achievements: Award, goals: ArrowUpRight, aspirations: ArrowUpRight };
@@ -42,6 +43,7 @@ export function PortfolioView({ content, preview = false }: { content: Portfolio
       {s.showContact && <section id="connect" className="folio-section folio-contact"><div className="folio-container"><div className="folio-contact-card"><div className="contact-orbit orbit-one" aria-hidden="true"/><div className="contact-orbit orbit-two" aria-hidden="true"/><div className="folio-contact-content"><span className="folio-eyebrow">HAVE SOMETHING IN MIND?</span><h2>{s.contactTitle}</h2><p>{s.contactDescription}</p>{p.email && <a className="folio-button primary contact-email" href={`mailto:${p.email}`}><Mail size={17}/>{p.email}<ArrowUpRight size={17}/></a>}<div className="folio-contact-details">{p.phone && <a href={`tel:${p.phone.replace(/[^+\d]/g,"")}`}><Phone size={14}/>{p.phone}</a>}{p.location && <span><MapPin size={14}/>{p.location}</span>}</div></div><div className="folio-contact-code" aria-hidden="true"><span>&lt;</span><Braces size={95} strokeWidth={1}/><span>/&gt;</span></div></div>{sections.social.visible && <div className="folio-social-row"><span>{sections.social.title}</span><div>{sections.social.items.filter(x => x.url).map(x => <a key={x.id} href={x.url} target="_blank" rel="noopener noreferrer">{x.title}<ArrowUpRight size={14}/></a>)}</div></div>}</div></section>}
     </main>
     <footer className="folio-footer"><div className="folio-container"><div><a className="folio-footer-brand" href="#home">{p.name}<span>.</span></a><p>{s.footer}</p><a className="folio-owner-link" href="/owner">Owner</a></div><div className="folio-footer-right"><span>© {new Date().getFullYear()} · All rights reserved.</span><div><a href="#home">Back to top<ArrowUpRight size={13}/></a></div></div></div></footer>
+    <PortfolioAssistant content={content}/>
   </div>;
 }
 
