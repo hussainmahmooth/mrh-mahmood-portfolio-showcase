@@ -1,0 +1,586 @@
+{
+  "profile": {
+    "name": "M.R.H. Mahmood",
+    "title": "IT Professional & Aspiring IT Undergraduate",
+    "summary": "Currently studying at ICST. Exploring the possibilities of web development, data science, cloud technologies, and artificial intelligence.",
+    "photo": "/profile.jpg",
+    "aboutTitle": "Curiosity, turned into capability.",
+    "about": "Passionate IT professional with a strong educational foundation and continuous learning mindset. Currently pursuing a Bachelor's degree in IT at ICST while building practical experience through hands-on projects.\n\nI am interested in full-stack development, data analytics, artificial intelligence, and cloud computing — and in using technology to solve real-world problems.\n\nMy goal is to bridge technical innovation and business needs, contributing to projects that make a difference.",
+    "traits": "Web Development, Data Science, Cloud Computing, Artificial Intelligence",
+    "email": "mahmoothhussain550@gmail.com",
+    "phone": "0758325511",
+    "location": "Remote location",
+    "availability": "Open to opportunities & collaborations",
+    "resume": "/my_CV.pdf",
+    "resumeLabel": "Download resume"
+  },
+  "settings": {
+    "siteTitle": "M.R.H. Mahmood | IT Professional & Developer",
+    "description": "IT professional and aspiring IT undergraduate at ICST. Explore my projects in web development, data science, cloud technologies, and AI.",
+    "accent": "#60a5fa",
+    "footer": "Built with curiosity. Crafted with code.",
+    "contactTitle": "Let’s build something meaningful.",
+    "contactDescription": "Have an idea, an opportunity, or an interesting technical challenge? I would love to hear about it.",
+    "showContact": true
+  },
+  "sections": {
+    "interests": {
+      "title": "A little about me",
+      "description": "The person behind the projects.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "Current focus",
+          "subtitle": "",
+          "date": "",
+          "description": "Pursuing a Bachelor's degree in IT at ICST while developing practical skills through projects in web development, data science, and cloud technologies.",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "Professional interests",
+          "subtitle": "",
+          "date": "",
+          "description": "Full-stack development, data analytics, artificial intelligence, and cloud computing solutions.",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        }
+      ]
+    },
+    "stats": {
+      "title": "At a glance",
+      "description": "",
+      "visible": true,
+      "items": []
+    },
+    "education": {
+      "title": "Learning, one chapter at a time.",
+      "description": "My educational journey.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "First School",
+          "subtitle": "Al Madeena",
+          "date": "",
+          "description": "Foundation education",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "Advanced Level",
+          "subtitle": "Shams Center College",
+          "date": "",
+          "description": "Completed advanced studies",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-2",
+          "title": "Diploma Studies",
+          "subtitle": "ICBT Campus",
+          "date": "",
+          "description": "ITA and English diploma programs",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-3",
+          "title": "Current Studies",
+          "subtitle": "ICST",
+          "date": "",
+          "description": "Bachelor in IT at International Campus of Science and Technology",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Current",
+          "level": 0
+        }
+      ]
+    },
+    "skills": {
+      "title": "The tools behind the work.",
+      "description": "A growing toolkit for turning ideas into working solutions.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "Web Design",
+          "subtitle": "",
+          "date": "",
+          "description": "Creating responsive, user-friendly websites with modern design principles and accessibility standards.",
+          "detail": "",
+          "tags": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Advanced",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "Python",
+          "subtitle": "",
+          "date": "",
+          "description": "Developing applications, automation scripts, and data processing solutions using Python's versatile ecosystem.",
+          "detail": "",
+          "tags": [
+            "Django",
+            "Flask",
+            "Pandas",
+            "NumPy",
+            "Automation"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Intermediate",
+          "level": 0
+        },
+        {
+          "id": "original-2",
+          "title": "Data Science & Analytics",
+          "subtitle": "",
+          "date": "",
+          "description": "Extracting insights from data through statistical analysis, visualization, and machine learning techniques.",
+          "detail": "",
+          "tags": [
+            "Python",
+            "SQL",
+            "Tableau",
+            "Excel",
+            "Statistics"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Intermediate",
+          "level": 0
+        },
+        {
+          "id": "original-3",
+          "title": "AWS & Networking",
+          "subtitle": "",
+          "date": "",
+          "description": "Cloud infrastructure management, networking solutions, and scalable system architecture design.",
+          "detail": "",
+          "tags": [
+            "AWS EC2",
+            "S3",
+            "VPC",
+            "Networking",
+            "Cloud Architecture"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Intermediate",
+          "level": 0
+        },
+        {
+          "id": "original-4",
+          "title": "Artificial Intelligence (Level 1)",
+          "subtitle": "",
+          "date": "",
+          "description": "Foundational knowledge in AI concepts, machine learning algorithms, and intelligent system development.",
+          "detail": "",
+          "tags": [
+            "Machine Learning",
+            "AI Concepts",
+            "Neural Networks",
+            "Python",
+            "TensorFlow"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Beginner",
+          "level": 0
+        },
+        {
+          "id": "original-5",
+          "title": "Social Media Marketing",
+          "subtitle": "",
+          "date": "",
+          "description": "Strategic digital marketing campaigns, content creation, and audience engagement across social platforms.",
+          "detail": "",
+          "tags": [
+            "Content Strategy",
+            "Analytics",
+            "Campaign Management",
+            "SEO",
+            "Social Platforms"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Intermediate",
+          "level": 0
+        }
+      ]
+    },
+    "qualifications": {
+      "title": "Qualifications",
+      "description": "Formal education and professional development",
+      "visible": true,
+      "items": []
+    },
+    "certifications": {
+      "title": "Always learning. Always building.",
+      "description": "Professional certifications across technology and business.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "Artificial Intelligence (Level 1)",
+          "subtitle": "",
+          "date": "",
+          "description": "Foundational certification covering AI concepts, machine learning basics, and practical applications in modern technology.",
+          "detail": "",
+          "tags": [
+            "Level 1"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "AI & Machine Learning",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "Web Design",
+          "subtitle": "",
+          "date": "",
+          "description": "Comprehensive certification in modern web design principles, responsive layouts, and user experience optimization.",
+          "detail": "",
+          "tags": [
+            "Professional"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Web Development",
+          "level": 0
+        },
+        {
+          "id": "original-2",
+          "title": "AWS & Networking",
+          "subtitle": "",
+          "date": "",
+          "description": "Cloud infrastructure and networking fundamentals including AWS services, network architecture, and security best practices.",
+          "detail": "",
+          "tags": [
+            "Associate"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Cloud Computing",
+          "level": 0
+        },
+        {
+          "id": "original-3",
+          "title": "Social Media Marketing",
+          "subtitle": "",
+          "date": "",
+          "description": "Digital marketing strategies, social media campaign management, and audience engagement optimization techniques.",
+          "detail": "",
+          "tags": [
+            "Professional"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Digital Marketing",
+          "level": 0
+        },
+        {
+          "id": "original-4",
+          "title": "Data Science & Analytics",
+          "subtitle": "",
+          "date": "",
+          "description": "Data analysis methodologies, statistical modeling, and visualization techniques for business intelligence applications.",
+          "detail": "",
+          "tags": [
+            "Intermediate"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Data Science",
+          "level": 0
+        },
+        {
+          "id": "original-5",
+          "title": "Python Programming",
+          "subtitle": "",
+          "date": "",
+          "description": "Python programming fundamentals, object-oriented programming, and application development using Python ecosystem.",
+          "detail": "",
+          "tags": [
+            "Intermediate"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Programming",
+          "level": 0
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience & impact.",
+      "description": "Where I have worked and what I have learned.",
+      "visible": true,
+      "items": []
+    },
+    "projects": {
+      "title": "Ideas, brought to life.",
+      "description": "A selection of projects across healthcare, education, and management.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "Medical Management Hub",
+          "subtitle": "",
+          "date": "",
+          "description": "Comprehensive healthcare management system designed to streamline patient records, appointments, and medical staff coordination.",
+          "detail": "",
+          "tags": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "Express"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Healthcare",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "LMS Website",
+          "subtitle": "",
+          "date": "",
+          "description": "Learning Management System providing course management, student tracking, and interactive learning experiences.",
+          "detail": "",
+          "tags": [
+            "PHP",
+            "MySQL",
+            "Bootstrap",
+            "JavaScript"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Education",
+          "level": 0
+        },
+        {
+          "id": "original-2",
+          "title": "Hostel Management Project",
+          "subtitle": "",
+          "date": "",
+          "description": "Digital solution for hostel administration including room allocation, fee management, and resident services.",
+          "detail": "",
+          "tags": [
+            "Python",
+            "Django",
+            "SQLite",
+            "CSS"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Management",
+          "level": 0
+        },
+        {
+          "id": "original-3",
+          "title": "Student Management System (CRUD)",
+          "subtitle": "",
+          "date": "",
+          "description": "Full-featured student information system with create, read, update, and delete operations for academic records.",
+          "detail": "",
+          "tags": [
+            "Java",
+            "MySQL",
+            "Swing",
+            "JDBC"
+          ],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Academic",
+          "level": 0
+        }
+      ]
+    },
+    "thoughts": {
+      "title": "Notes from the journey.",
+      "description": "Ideas, learning, and things on my mind.",
+      "visible": true,
+      "items": []
+    },
+    "achievements": {
+      "title": "Milestones that matter.",
+      "description": "A few moments from the journey.",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "Hackathon Recognition",
+          "subtitle": "",
+          "date": "",
+          "description": "Placed well in a competitive hackathon competition, demonstrating problem-solving skills and innovative thinking under pressure.",
+          "detail": "",
+          "tags": [],
+          "url": "",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "Competition Achievement",
+          "level": 0
+        }
+      ]
+    },
+    "goals": {
+      "title": "What comes next.",
+      "description": "What I am working towards.",
+      "visible": true,
+      "items": []
+    },
+    "aspirations": {
+      "title": "Looking ahead.",
+      "description": "The direction I am growing in.",
+      "visible": true,
+      "items": []
+    },
+    "social": {
+      "title": "Elsewhere on the internet",
+      "description": "",
+      "visible": true,
+      "items": [
+        {
+          "id": "original-0",
+          "title": "LinkedIn",
+          "subtitle": "",
+          "date": "",
+          "description": "",
+          "detail": "",
+          "tags": [],
+          "url": "https://www.linkedin.com/in/mahmooth-hussain-29065a2a8/",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-1",
+          "title": "GitHub",
+          "subtitle": "",
+          "date": "",
+          "description": "",
+          "detail": "",
+          "tags": [],
+          "url": "https://github.com/hussainmahmooth",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-2",
+          "title": "Facebook",
+          "subtitle": "",
+          "date": "",
+          "description": "",
+          "detail": "",
+          "tags": [],
+          "url": "https://web.facebook.com/hussain.mahmood.37266/",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        },
+        {
+          "id": "original-3",
+          "title": "WhatsApp",
+          "subtitle": "",
+          "date": "",
+          "description": "",
+          "detail": "",
+          "tags": [],
+          "url": "https://wa.me/qr/GH6FQF7HRPMSF1",
+          "github": "",
+          "pdf": "",
+          "image": "",
+          "category": "",
+          "level": 0
+        }
+      ]
+    }
+  }
+}
