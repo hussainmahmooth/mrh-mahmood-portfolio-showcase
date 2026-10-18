@@ -10,6 +10,9 @@
   padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px));
 }
 .folio-footer .folio-owner-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
   min-height: 36px;
   padding: 8px 14px;
   border: 1px solid #334d6e;
