@@ -38,3 +38,10 @@
 .folio-repository-copy > span { display: block; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: #6f99c8; }
 .folio-repository-copy > strong { display: block; font: 400 10px/1.8 'JetBrains Mono', monospace; overflow-wrap: anywhere; margin-top: 3px; }
 .folio-repository-reference > svg { flex-shrink: 0; }
+
+.folio-social-section { padding: 30px 0 38px; border-top: 1px solid #203047; }
+.folio-social-section .folio-social-row { margin-top: 0; flex-wrap: wrap; }
+.folio-social-section .folio-social-row > span { color: #91a9c8; font-size: 11px; }
+.folio-social-section .folio-social-row > div { gap: 12px; }
+.folio-social-section .folio-social-row a { padding: 11px 15px; font-size: 13px; font-weight: 500; color: #c1dafb; background: #132339; border: 1px solid #304b6c; border-radius: 7px; }
+.folio-social-section .folio-social-row a:hover { background: #1c3554; border-color: #6390c6; color: #e7f2ff; }

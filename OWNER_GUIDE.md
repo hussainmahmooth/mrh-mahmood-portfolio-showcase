@@ -24,6 +24,8 @@ If you lose your password, use the authenticated Netlify dashboard's Blobs brows
 - **Skills, achievements, goals, aspirations, interests, profile stats, social links:** add, edit, delete, and reorder entries.
 - **Site settings:** page title, search description, accent color, footer, contact section, JSON backups.
 
+Social links have their own visibility switch and remain visible when the contact section is hidden. Add both a platform name and its URL under **Social links**, then publish. Entries without a URL are not shown publicly.
+
 Each collection has editable headings and introductions and can be hidden. Empty collections are automatically omitted from the public site. Use up/down buttons to reorder entries within a collection.
 
 Edits are saved as a **browser draft** after a short pause; restoring a draft is offered after login. **Preview** opens the draft in a new tab. **Publish** saves it to Netlify and makes it visible to visitors. Visitors receive updates when they reload the portfolio. Use **Export JSON backup** before major edits; imported backups remain drafts until published. Exported JSON references uploaded files; it does not embed their bytes. Back up originals separately.

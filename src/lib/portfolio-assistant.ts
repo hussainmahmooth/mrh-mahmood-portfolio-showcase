@@ -45,7 +45,7 @@ export function answerPortfolioQuestion(question: string, p: Portfolio): Assista
 
   if (/\b(contact|email|e-mail|mail|phone|whatsapp|linkedin|github|reach|hire|hiring|availability|available|collaborate|collaboration|connect)\b/.test(q)) {
     const lines=[`Here is how to get in touch with ${name}:`,p.profile.email?`Email: ${p.profile.email}`:"",p.settings.showContact && p.profile.phone?`Phone: ${p.profile.phone}`:"",p.settings.showContact && p.profile.location?`Location: ${p.profile.location}`:"",p.profile.availability].filter(Boolean);
-    const links: AssistantLink[]=[...(p.profile.email?[{label:"Send an email",href:`mailto:${p.profile.email}`}]:[]),...(p.settings.showContact && p.sections.social.visible?available(p,"social").filter(x=>x.url).map(x=>({label:x.title,href:x.url})):[])];
+    const links: AssistantLink[]=[...(p.profile.email?[{label:"Send an email",href:`mailto:${p.profile.email}`}]:[]),...(p.sections.social.visible?available(p,"social").filter(x=>x.url).map(x=>({label:x.title,href:x.url})):[])];
     return reply(lines.length>1?lines.join("\n\n"):"Contact details have not been published yet.",links);
   }
   if (/\b(location|located|live|based|country|city|where)\b/.test(q) && !/\b(study|studying|education|school|college)\b/.test(q)) return p.settings.showContact && p.profile.location ? reply(`The location listed on the portfolio is: ${p.profile.location}.`) : reply("A location has not been published on this portfolio.");
