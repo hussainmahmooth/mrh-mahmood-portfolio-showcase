@@ -16,13 +16,14 @@ If you lose your password, use the authenticated Netlify dashboard's Blobs brows
 
 ## Customize your portfolio
 
-- **Profile & about:** name, job title, photo, introductions, traits, contact details, availability.
+- **Profile & about:** name, job title, photo, introductions, traits, availability.
 - **Resume:** upload or replace your latest resume PDF and change the button text.
 - **Projects:** descriptions, technologies, cover images, live links, source repositories, supporting PDFs. Every project has an always-visible **GitHub repository URL (optional)** field. Leave it blank to hide the reference; add or change it and click **Publish** to display a clickable GitHub reference on the public card. Clearing it and publishing removes the reference.
 - **Experience, education, qualifications, certifications:** organizations, dates, achievements, images, credential links, and PDF evidence.
 - **Thoughts & notes:** publish thoughts, articles, and updates.
 - **Skills, achievements, goals, aspirations, interests, profile stats, social links:** add, edit, delete, and reorder entries.
-- **Site settings:** page title, search description, accent color, footer, contact section, JSON backups.
+- **Contact information:** email / Gmail, optional phone and location, full contact-section visibility, heading, and introduction. The email address stays visible in the footer when the full section is hidden. Clear the email field and publish to remove the public email links.
+- **Site settings:** page title, search description, accent color, footer, JSON backups.
 
 Social links have their own visibility switch and remain visible when the contact section is hidden. Add both a platform name and its URL under **Social links**, then publish. Entries without a URL are not shown publicly.
 

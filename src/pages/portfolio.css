@@ -45,3 +45,13 @@
 .folio-social-section .folio-social-row > div { gap: 12px; }
 .folio-social-section .folio-social-row a { padding: 11px 15px; font-size: 13px; font-weight: 500; color: #c1dafb; background: #132339; border: 1px solid #304b6c; border-radius: 7px; }
 .folio-social-section .folio-social-row a:hover { background: #1c3554; border-color: #6390c6; color: #e7f2ff; }
+
+.folio-footer-contact { margin-bottom: 20px; font-style: normal; }
+.folio-footer-contact > span { display: block; margin-bottom: 9px; font: 10px 'JetBrains Mono', monospace; letter-spacing: .12em; color: #91a9c8; }
+.folio-footer-right .folio-footer-contact a { gap: 10px; font-size: 14px; line-height: 1.6; color: #c1dafb; }
+.folio-footer-contact a > span { overflow-wrap: anywhere; min-width: 0; }
+.folio-footer-contact svg { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .folio-footer-right { flex-wrap: wrap; }
+  .folio-footer-contact { flex-basis: 100%; margin-bottom: 10px; }
+}
